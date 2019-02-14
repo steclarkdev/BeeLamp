@@ -19,6 +19,74 @@ BACKCOLOR = (130,130,130)
 BEECOLOR = (255,255,0)
 speed = 0.01
 
+#just a copy/paste to show memoryerror
+class Flower2:
+    modeChangeAgeChange = 20
+    modeChangeAge = 0
+    modeChangeRnd = 3
+    loopCount = 0
+    m_stripIndex = 0
+    color = BLUE
+    birthTime =0
+
+    def __init__(self, time):
+        self.modeChangeAge = time
+        self.m_stripIndex = random.randint(0,(50-1))
+
+    def stripIndex(self,value,strip):
+        calcIndex = self.m_stripIndex+value
+        if(calcIndex>=0 or calcIndex <= (num_pixels-1)):
+            strip[calcIndex] = self.color
+
+    def update(self,currSec):
+        if(self.modeChangeAge < currSec):
+            print("Flower rebirth")
+            self.m_stripIndex = random.randint(10,50)
+            self.modeChangeAge = currSec + self.modeChangeAgeChange + random.randint(-1 * self.modeChangeRnd, self.modeChangeRnd)
+
+    def draw(self,strip):
+        strip[self.m_stripIndex] = RED
+        self.stripIndex(9,strip)
+        self.stripIndex(17,strip)
+        self.stripIndex(8,strip)
+        self.stripIndex(-9,strip)
+        self.stripIndex(-17,strip)
+        self.stripIndex(-8,strip)
+        
+#just a copy/paste to show memoryerror
+class Flower3:
+    modeChangeAgeChange = 20
+    modeChangeAge = 0
+    modeChangeRnd = 3
+    loopCount = 0
+    m_stripIndex = 0
+    color = BLUE
+    birthTime =0
+
+    def __init__(self, time):
+        self.modeChangeAge = time
+        self.m_stripIndex = random.randint(0,(50-1))
+
+    def stripIndex(self,value,strip):
+        calcIndex = self.m_stripIndex+value
+        if(calcIndex>=0 or calcIndex <= (num_pixels-1)):
+            strip[calcIndex] = self.color
+
+    def update(self,currSec):
+        if(self.modeChangeAge < currSec):
+            print("Flower rebirth")
+            self.m_stripIndex = random.randint(10,50)
+            self.modeChangeAge = currSec + self.modeChangeAgeChange + random.randint(-1 * self.modeChangeRnd, self.modeChangeRnd)
+
+    def draw(self,strip):
+        strip[self.m_stripIndex] = RED
+        self.stripIndex(9,strip)
+        self.stripIndex(17,strip)
+        self.stripIndex(8,strip)
+        self.stripIndex(-9,strip)
+        self.stripIndex(-17,strip)
+        self.stripIndex(-8,strip)
+
 
 
 class Flower:
