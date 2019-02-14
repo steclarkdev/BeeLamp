@@ -55,8 +55,6 @@ class Flower:
         self.stripIndex(-8,strip)
 
 
-
-
 class Bee:
     mode = 1
     modeChangeAge = 0
